@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Page Not Found</title>
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+
+  </head>
+  <body  onload="loading()" oncontextmenu="loading(); return false">
+    <div class="noise"></div>
+    <div class="overlay"></div>
+    <h1 style="
+      position: absolute;
+      opacity: 0.25;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%) scale(10);
+    ">404</h1> 
+    <main id="main">
+    <div id="message">
+      <h2>Page Not Found</h2>
+      <p>The specified file was not found on this website. Please check the URL for mistakes and try again.</p>
+      <br>
+      <a href="/">Return to Home</a>
+    </div>
+    </main>
+
+    <script>
+      
+    function loading(){
+      glitch('main')
+    }
+    
+    
+    function glitch(id){
+      document.getElementById(id).style.opacity = "0.5"
+      setTimeout(() => {
+        document.getElementById(id).style.opacity = "0"
+        setTimeout(() => {
+          document.getElementById(id).style.opacity = "1"
+          setTimeout(() => {
+            document.getElementById(id).style.opacity = "0"
+            setTimeout(() => {
+              document.getElementById(id).style.opacity = "1"
+            }, 100);
+          }, 100);
+        }, 100);
+      }, 100);
+    }
+    </script>
+  </body>
+</html>
